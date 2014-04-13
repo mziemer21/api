@@ -1,6 +1,5 @@
-<h1>Editing favorite</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @favorite %> |
-<%= link_to 'Back', favorites_path %>
+<%- model_class = Favorites -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Favorites %></h1>
+</div>
+<%= render :partial => 'form' %>

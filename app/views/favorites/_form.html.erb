@@ -1,17 +1,10 @@
-<%= form_for(@favorite) do |f| %>
-  <% if @favorite.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@favorite.errors.count, "error") %> prohibited this favorite from being saved:</h2>
+<%= form_for @favorites, :html => { :class => 'form-horizontal form-model' } do |f| %>
 
-      <ul>
-      <% @favorite.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  favorites_path, :class => 'btn btn-default' %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
