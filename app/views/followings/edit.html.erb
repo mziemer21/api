@@ -1,6 +1,5 @@
-<h1>Editing following</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @following %> |
-<%= link_to 'Back', followings_path %>
+<%- model_class = Following -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Following %></h1>
+</div>
+<%= render :partial => 'form' %>
