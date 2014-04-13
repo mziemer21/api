@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  title: MyString
+  restrictions: MyText
+  time_start: 2014-04-13
+  time_end: 2014-04-13
+  up_votes: 1
+  down_votes: 1
+  day: 1
+  start_date: 2014-04-13
+  end_date: 2014-04-13
+  user_id: 
+  establishment_id: 
+  deal_type_id: 
+
+two:
+  title: MyString
+  title: MyString
+  restrictions: MyText
+  time_start: 2014-04-13
+  time_end: 2014-04-13
+  up_votes: 1
+  down_votes: 1
+  day: 1
+  start_date: 2014-04-13
+  end_date: 2014-04-13
+  user_id: 
+  establishment_id: 
+  deal_type_id: 
