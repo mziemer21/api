@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @rewiew.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @rewiew.date %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @rewiew.details %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @rewiew.rating %>
+</p>
+
+<p>
+  <strong>Helpful:</strong>
+  <%= @rewiew.helpful %>
+</p>
+
+<p>
+  <strong>Establishment:</strong>
+  <%= @rewiew.establishment %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rewiew.user %>
+</p>
+
+<%= link_to 'Edit', edit_rewiew_path(@rewiew) %> |
+<%= link_to 'Back', rewiews_path %>

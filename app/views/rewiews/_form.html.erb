@@ -1,0 +1,45 @@
+<%= form_for(@rewiew) do |f| %>
+  <% if @rewiew.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rewiew.errors.count, "error") %> prohibited this rewiew from being saved:</h2>
+
+      <ul>
+      <% @rewiew.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_area :details %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :helpful %><br>
+    <%= f.number_field :helpful %>
+  </div>
+  <div class="field">
+    <%= f.label :establishment_id %><br>
+    <%= f.text_field :establishment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

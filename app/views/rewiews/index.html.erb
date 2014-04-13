@@ -1,0 +1,39 @@
+<h1>Listing rewiews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Details</th>
+      <th>Rating</th>
+      <th>Helpful</th>
+      <th>Establishment</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rewiews.each do |rewiew| %>
+      <tr>
+        <td><%= rewiew.title %></td>
+        <td><%= rewiew.date %></td>
+        <td><%= rewiew.details %></td>
+        <td><%= rewiew.rating %></td>
+        <td><%= rewiew.helpful %></td>
+        <td><%= rewiew.establishment %></td>
+        <td><%= rewiew.user %></td>
+        <td><%= link_to 'Show', rewiew %></td>
+        <td><%= link_to 'Edit', edit_rewiew_path(rewiew) %></td>
+        <td><%= link_to 'Destroy', rewiew, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rewiew', new_rewiew_path %>
