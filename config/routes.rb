@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  resources :images
+
   resources :rewiews
 
   resources :deals
