@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :rewiews
   has_many :images
   belongs_to :location
+  has_and_belongs_to_many :followings
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
