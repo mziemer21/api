@@ -1,6 +1,5 @@
-<h1>Editing rewiew</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @rewiew %> |
-<%= link_to 'Back', rewiews_path %>
+<%- model_class = Rewiew -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Rewiew %></h1>
+</div>
+<%= render :partial => 'form' %>

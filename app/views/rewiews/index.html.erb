@@ -1,39 +1,44 @@
-<h1>Listing rewiews</h1>
-
-<table>
+<%- model_class = Rewiew -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Rewiew %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Details</th>
-      <th>Rating</th>
-      <th>Helpful</th>
-      <th>Establishment</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:details) %></th>
+      <th><%= model_class.human_attribute_name(:rating) %></th>
+      <th><%= model_class.human_attribute_name(:helpful) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @rewiews.each do |rewiew| %>
       <tr>
+        <td><%= rewiew.id %></td>
         <td><%= rewiew.title %></td>
         <td><%= rewiew.date %></td>
         <td><%= rewiew.details %></td>
         <td><%= rewiew.rating %></td>
         <td><%= rewiew.helpful %></td>
-        <td><%= rewiew.establishment %></td>
-        <td><%= rewiew.user %></td>
-        <td><%= link_to 'Show', rewiew %></td>
-        <td><%= link_to 'Edit', edit_rewiew_path(rewiew) %></td>
-        <td><%= link_to 'Destroy', rewiew, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l rewiew.created_at, format: :long %></td>
+        <td>
+          <%= link_to rewiew_path(rewiew), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to rewiew_path(rewiew), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Rewiew', new_rewiew_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_rewiew_path,
+            :class => 'btn btn-primary' %>
