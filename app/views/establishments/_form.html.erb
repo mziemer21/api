@@ -1,97 +1,94 @@
-<%= form_for(@establishment) do |f| %>
-  <% if @establishment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@establishment.errors.count, "error") %> prohibited this establishment from being saved:</h2>
-
-      <ul>
-      <% @establishment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @establishment, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :rating, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :rating, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :neighborhoods, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :neighborhoods, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :hours, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :hours, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :phone, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :bar, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :bar, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :facebook, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :facebook, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :menu, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :menu, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.number_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :neighborhoods %><br>
-    <%= f.text_field :neighborhoods %>
-  </div>
-  <div class="field">
-    <%= f.label :hours %><br>
-    <%= f.text_field :hours %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.number_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :bar %><br>
-    <%= f.check_box :bar %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook %><br>
-    <%= f.text_field :facebook %>
-  </div>
-  <div class="field">
-    <%= f.label :menu %><br>
-    <%= f.text_field :menu %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :location_id %><br>
-    <%= f.text_field :location_id %>
-  </div>
-  <div class="field">
-    <%= f.label :establishment_type_id %><br>
-    <%= f.text_field :establishment_type_id %>
-  </div>
-  <div class="field">
-    <%= f.label :checkin_id %><br>
-    <%= f.text_field :checkin_id %>
-  </div>
-  <div class="field">
-    <%= f.label :following_id %><br>
-    <%= f.text_field :following_id %>
-  </div>
-  <div class="field">
-    <%= f.label :favorites_id %><br>
-    <%= f.text_field :favorites_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  establishments_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
