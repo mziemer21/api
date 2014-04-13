@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  resources :favorites
+
   resources :followings
 
   resources :checkins
