@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  resources :followings
+
   resources :checkins
 
   resources :images
