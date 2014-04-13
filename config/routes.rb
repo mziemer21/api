@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  resources :establishments
+
   resources :locations
 
   resources :establishment_types

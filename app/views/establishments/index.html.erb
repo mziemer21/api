@@ -1,0 +1,65 @@
+<h1>Listing establishments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Neighborhoods</th>
+      <th>Hours</th>
+      <th>Price</th>
+      <th>Phone</th>
+      <th>Bar</th>
+      <th>Facebook</th>
+      <th>Menu</th>
+      <th>User</th>
+      <th>Location</th>
+      <th>Establishment type</th>
+      <th>Checkin</th>
+      <th>Following</th>
+      <th>Favorites</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @establishments.each do |establishment| %>
+      <tr>
+        <td><%= establishment.name %></td>
+        <td><%= establishment.description %></td>
+        <td><%= establishment.rating %></td>
+        <td><%= establishment.address %></td>
+        <td><%= establishment.city %></td>
+        <td><%= establishment.state %></td>
+        <td><%= establishment.zip %></td>
+        <td><%= establishment.neighborhoods %></td>
+        <td><%= establishment.hours %></td>
+        <td><%= establishment.price %></td>
+        <td><%= establishment.phone %></td>
+        <td><%= establishment.bar %></td>
+        <td><%= establishment.facebook %></td>
+        <td><%= establishment.menu %></td>
+        <td><%= establishment.user %></td>
+        <td><%= establishment.location %></td>
+        <td><%= establishment.establishment_type %></td>
+        <td><%= establishment.checkin %></td>
+        <td><%= establishment.following %></td>
+        <td><%= establishment.favorites %></td>
+        <td><%= link_to 'Show', establishment %></td>
+        <td><%= link_to 'Edit', edit_establishment_path(establishment) %></td>
+        <td><%= link_to 'Destroy', establishment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Establishment', new_establishment_path %>
