@@ -9,4 +9,5 @@ class Establishment < ActiveRecord::Base
   has_many :rewiews
   has_many :images
   has_and_belongs_to_many :favorites
+  has_and_belongs_to_many :followings
 end
