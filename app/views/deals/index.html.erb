@@ -1,30 +1,29 @@
-<h1>Listing deals</h1>
-
-<table>
+<%- model_class = Deal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Deal %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Title</th>
-      <th>Restrictions</th>
-      <th>Time start</th>
-      <th>Time end</th>
-      <th>Up votes</th>
-      <th>Down votes</th>
-      <th>Day</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>User</th>
-      <th>Establishment</th>
-      <th>Deal type</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:restrictions) %></th>
+      <th><%= model_class.human_attribute_name(:time_start) %></th>
+      <th><%= model_class.human_attribute_name(:time_end) %></th>
+      <th><%= model_class.human_attribute_name(:up_votes) %></th>
+      <th><%= model_class.human_attribute_name(:down_votes) %></th>
+      <th><%= model_class.human_attribute_name(:day) %></th>
+      <th><%= model_class.human_attribute_name(:start_date) %></th>
+      <th><%= model_class.human_attribute_name(:end_date) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @deals.each do |deal| %>
       <tr>
+        <td><%= deal.id %></td>
         <td><%= deal.title %></td>
         <td><%= deal.title %></td>
         <td><%= deal.restrictions %></td>
@@ -35,17 +34,21 @@
         <td><%= deal.day %></td>
         <td><%= deal.start_date %></td>
         <td><%= deal.end_date %></td>
-        <td><%= deal.user %></td>
-        <td><%= deal.establishment %></td>
-        <td><%= deal.deal_type %></td>
-        <td><%= link_to 'Show', deal %></td>
-        <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
-        <td><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l deal.created_at, format: :long %></td>
+        <td>
+          <%= link_to deal_path(deal), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to deal_path(deal), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Deal', new_deal_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_deal_path,
+            :class => 'btn btn-primary' %>

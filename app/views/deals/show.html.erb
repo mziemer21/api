@@ -1,69 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Deal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Deal %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @deal.title %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:restrictions) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.restrictions %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:time_start) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.time_start %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:time_end) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.time_end %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:up_votes) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.up_votes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:down_votes) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.down_votes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:day) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.day %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:start_date) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.start_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:end_date) %></dt>
+      <dd><pre class="prettyprint"><%= @deal.end_date %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @deal.title %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              deals_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_deal_path(@deal), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              deal_path(@deal),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Restrictions:</strong>
-  <%= @deal.restrictions %>
-</p>
-
-<p>
-  <strong>Time start:</strong>
-  <%= @deal.time_start %>
-</p>
-
-<p>
-  <strong>Time end:</strong>
-  <%= @deal.time_end %>
-</p>
-
-<p>
-  <strong>Up votes:</strong>
-  <%= @deal.up_votes %>
-</p>
-
-<p>
-  <strong>Down votes:</strong>
-  <%= @deal.down_votes %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @deal.day %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @deal.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @deal.end_date %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @deal.user %>
-</p>
-
-<p>
-  <strong>Establishment:</strong>
-  <%= @deal.establishment %>
-</p>
-
-<p>
-  <strong>Deal type:</strong>
-  <%= @deal.deal_type %>
-</p>
-
-<%= link_to 'Edit', edit_deal_path(@deal) %> |
-<%= link_to 'Back', deals_path %>

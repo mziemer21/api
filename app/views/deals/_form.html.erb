@@ -1,69 +1,70 @@
-<%= form_for(@deal) do |f| %>
-  <% if @deal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
-
-      <ul>
-      <% @deal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @deal, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :restrictions, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :restrictions, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :time_start, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :time_start, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :time_end, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :time_end, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :up_votes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :up_votes, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :down_votes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :down_votes, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :day, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :day, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :start_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :end_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :restrictions %><br>
-    <%= f.text_area :restrictions %>
-  </div>
-  <div class="field">
-    <%= f.label :time_start %><br>
-    <%= f.date_select :time_start %>
-  </div>
-  <div class="field">
-    <%= f.label :time_end %><br>
-    <%= f.date_select :time_end %>
-  </div>
-  <div class="field">
-    <%= f.label :up_votes %><br>
-    <%= f.number_field :up_votes %>
-  </div>
-  <div class="field">
-    <%= f.label :down_votes %><br>
-    <%= f.number_field :down_votes %>
-  </div>
-  <div class="field">
-    <%= f.label :day %><br>
-    <%= f.number_field :day %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :establishment_id %><br>
-    <%= f.text_field :establishment_id %>
-  </div>
-  <div class="field">
-    <%= f.label :deal_type_id %><br>
-    <%= f.text_field :deal_type_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  deals_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
