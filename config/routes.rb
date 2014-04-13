@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  resources :checkins
+
   resources :images
 
   resources :rewiews
