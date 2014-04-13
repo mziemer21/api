@@ -7,4 +7,5 @@ class Establishment < ActiveRecord::Base
   belongs_to :favorites
   has_many :deals
   has_many :rewiews
+  has_many :images
 end
