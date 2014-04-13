@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  resources :locations
+
   resources :establishment_types
 
   resources :deal_types
