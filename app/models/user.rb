@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :checkins
   has_and_belongs_to_many :favorites
   has_many :deals
+  has_and_belongs_to_many :users
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
