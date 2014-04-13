@@ -1,0 +1,29 @@
+<h1>Listing establishment_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @establishment_types.each do |establishment_type| %>
+      <tr>
+        <td><%= establishment_type.name %></td>
+        <td><%= establishment_type.description %></td>
+        <td><%= link_to 'Show', establishment_type %></td>
+        <td><%= link_to 'Edit', edit_establishment_type_path(establishment_type) %></td>
+        <td><%= link_to 'Destroy', establishment_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Establishment type', new_establishment_type_path %>
